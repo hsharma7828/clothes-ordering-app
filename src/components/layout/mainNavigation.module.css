@@ -1,0 +1,27 @@
+.unOrderesList {
+    margin: auto;
+    top: 30%;
+    position: relative;
+}
+  
+  .listItem {
+    display: inline;
+    text-decoration: none;
+    border: 2px solid black;
+  }
+
+  header {
+    max-width: 100%;
+    margin: auto;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #9cb0aad6;
+    height: 3rem;
+  }
+
+  .list a:hover,
+.list a.active {
+  color: var(--color-primary-800);
+}

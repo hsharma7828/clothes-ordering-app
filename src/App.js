@@ -8,8 +8,11 @@ const routes = createBrowserRouter([
     path: "/",
     element: <RootPage />,
     children: [
-      { path: "/clothes", element: <Clothes /> },
-      { path: "/clothes/:id", element: <ClothesList /> },
+      {
+        path: "/clothes",
+        element: <Clothes />,
+        children: [{ path: ":id", element: <ClothesList /> }],
+      },
     ],
   },
 ]);

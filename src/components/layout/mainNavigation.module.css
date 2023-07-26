@@ -1,27 +1,24 @@
-.unOrderesList {
-    margin: auto;
-    top: 30%;
-    position: relative;
-}
-  
-  .listItem {
-    display: inline;
-    text-decoration: none;
-    border: 2px solid black;
-  }
-
-  header {
-    max-width: 100%;
-    margin: auto;
-    padding: 0.5rem;
+  .list {
     display: flex;
-    justify-content: space-between;
-    text-align: center;
-    background-color: #9cb0aad6;
-    height: 3rem;
+    text-decoration: none;
+    margin-top: unset;
+    background-color: #e4e5c7;
   }
-
-  .list a:hover,
-.list a.active {
-  color: var(--color-primary-800);
+  .listItem {
+    list-style-type: none;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .listDiv {
+    padding: 1px;
+  }
+  .navLnk {
+    text-decoration: none;
+  }
+.humburger {
+  height: 2.5rem;
+  margin-left: auto;
+  margin-top: 0.5%;
+  margin-right: 12px;
 }

@@ -13,12 +13,18 @@
   .listDiv {
     padding: 1px;
   }
-  .navLnk {
+  .navLnk{
     text-decoration: none;
+    color: black;
+  }
+  .active {
+    text-decoration: none;
+    color:#fab833;
   }
 .humburger {
   height: 2.5rem;
   margin-left: auto;
   margin-top: 0.5%;
   margin-right: 12px;
+  cursor: pointer;
 }

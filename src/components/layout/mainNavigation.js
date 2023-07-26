@@ -10,20 +10,36 @@ function MainNavigation() {
     document.getElementById("hamburger").style.display = "none";
     setOpenCart(true);
   }
+  function closeModalHandler() {
+    setOpenCart(false);
+    document.getElementById("hamburger").style.display = "";
+  }
   return (
     <>
       <nav>
         <ul className={classes.list}>
           <div className={classes.listDiv}>
             <li className={classes.listItem}>
-              <NavLink className={classes.navLnk} to={"/"}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? classes.active : classes.navLnk
+                }
+                end
+                to={"/"}
+              >
                 Home
               </NavLink>
             </li>
           </div>
           <div className={classes.listDiv}>
             <li className={classes.listItem}>
-              <NavLink className={classes.navLnk} to={"/clothes"}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? classes.active : classes.navLnk
+                }
+                end
+                to={"/clothes"}
+              >
                 Clothes
               </NavLink>
             </li>
@@ -37,7 +53,7 @@ function MainNavigation() {
           />
         </ul>
       </nav>
-      {openCart && <Cart />}
+      {openCart && <Cart onClose={closeModalHandler} />}
     </>
   );
 }

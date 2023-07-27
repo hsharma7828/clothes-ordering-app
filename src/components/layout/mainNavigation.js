@@ -38,9 +38,9 @@ function MainNavigation() {
                   isActive ? classes.active : classes.navLnk
                 }
                 end
-                to={"/clothes"}
+                to={"/products"}
               >
-                Clothes
+                Availabe Products
               </NavLink>
             </li>
           </div>

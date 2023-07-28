@@ -1,12 +1,15 @@
-import { defer, json, useRouteLoaderData } from "react-router-dom";
+import { Suspense } from "react";
+import { Await, defer, json, useLoaderData } from "react-router-dom";
+import ProductDescription from "../sub-components/productDescription";
 
 function ProductsDetails() {
-  const { product, products } = useRouteLoaderData("product-details");
-  console.log(product, products);
+  const { product } = useLoaderData();
   return (
-    <>
-      <h1>Welcome to Product Details</h1>
-    </>
+    <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
+      <Await resolve={product}>
+        {(loadedEvents) => <ProductDescription product={loadedEvents} />}
+      </Await>
+    </Suspense>
   );
 }
 
@@ -45,7 +48,7 @@ async function loadEvent(id) {
 export async function loader({ request, params }) {
   const id = params.productId;
   return defer({
-    event: await loadEvent(id),
-    // events: loadEvents(),
+    product: await loadEvent(id),
+    // products: loadEvents(),
   });
 }

@@ -2,7 +2,7 @@ import classes from "./mainNavigation.module.css";
 import hamburger from "../../asserts/icons8-hamburger-128.png";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import Cart from "../carts/cart";
+import Cart from "../sub-components/cart";
 
 function MainNavigation() {
   const [openCart, setOpenCart] = useState(false);

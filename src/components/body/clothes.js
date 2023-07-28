@@ -26,7 +26,13 @@ async function loadEvents() {
     return json({ message: "Could not fetch events." }, { status: 500 });
   } else {
     const resData = await response.json();
-    return resData;
+    let avaialbeCategories = [];
+    resData.forEach((element) => {
+      if (!avaialbeCategories.includes(element.category)) {
+        avaialbeCategories.push(element.category);
+      }
+    });
+    return [resData, avaialbeCategories.sort()];
   }
 }
 

@@ -1,8 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootPage from "./components/layout/root";
-import Clothes, { loader as clothesLoader } from "./components/body/clothes";
-import ClothesList from "./components/body/clothesList";
+import Clothes, { loader as productsLoader } from "./components/body/clothes";
 import ErrorPage from "./components/layout/Errorpage";
+import ProductsDetails, {
+  loader as productLoader,
+} from "./components/body/productDetails";
+import ProductsRoot from "./components/layout/ProductsRoot";
 
 const routes = createBrowserRouter([
   {
@@ -12,9 +15,16 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/products",
-        element: <Clothes />,
-        loader: clothesLoader,
-        children: [{ path: ":id", element: <ClothesList /> }],
+        element: <ProductsRoot />,
+        children: [
+          { index: true, element: <Clothes />, loader: productsLoader },
+          {
+            path: ":productId",
+            id: "product-details",
+            loader: productLoader,
+            element: <ProductsDetails />,
+          },
+        ],
       },
     ],
   },

@@ -57,6 +57,10 @@
     margin-left: 1rem;
     cursor: pointer;
   }
+  .reset {
+    margin-left: 40px;
+    cursor: pointer;
+  }
   .filterList{
     flex: 50% 1;
     list-style-type: none;

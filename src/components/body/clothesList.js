@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import classes from "./clothesList.module.css";
 import filterIcon from "../../asserts/icons8-filter-50.png";
+import resetIcon from "../../asserts/icons8-reset-24.png";
 import { useState } from "react";
 
 function ClothesList({ events }) {
@@ -8,6 +9,9 @@ function ClothesList({ events }) {
   const [productList, setProductList] = useState([...events[0]]);
   function setOpenListHandler() {
     setOpenList(!openList);
+  }
+  function resetHandler() {
+    setProductList([...events[0]]);
   }
   function filterListHandler(value) {
     setProductList(filterProductList([...events[0]], value));
@@ -45,13 +49,19 @@ function ClothesList({ events }) {
           onClick={setOpenListHandler}
         />
         <ul className={openList ? classes.filterList : classes.hideul}>
-          {events[1].map((ele) => (
-            <li value={ele} onClick={() => filterListHandler(ele)}>
+          {events[1].map((ele, index) => (
+            <li key={index} value={ele} onClick={() => filterListHandler(ele)}>
               {ele}
             </li>
           ))}
         </ul>
       </div>
+      <img
+        src={resetIcon}
+        alt="Reset Icon"
+        className={classes.reset}
+        onClick={resetHandler}
+      />
       <hr></hr>
       {dataList}
     </div>

@@ -1,0 +1,21 @@
+.cart_modal {
+    position: absolute;
+    background-color: #adffad;
+    text-align: center;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 560px;
+    top: 56px;
+    width: 20%;
+    right: 5px;
+}
+.cross_icon {
+    margin-right: 24rem;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: -6.75rem;
+    top: 3.5rem;
+    background-color: #adffad;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+}

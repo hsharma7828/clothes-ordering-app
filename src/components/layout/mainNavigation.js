@@ -1,18 +1,19 @@
 import classes from "./mainNavigation.module.css";
 import hamburger from "../../asserts/icons8-hamburger-128.png";
+import cart from "../../asserts/icons8-cart-80.png";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import Cart from "../sub-components/cart";
+import Modal from "../sub-components/Modal";
 
 function MainNavigation() {
-  const [openCart, setOpenCart] = useState(false);
-  function openCartsectionHandler() {
-    document.getElementById("hamburger").style.display = "none";
-    setOpenCart(true);
+  const [modalCart, setModalCart] = useState(false);
+  function openModalsectionHandler() {
+    document.getElementById("modal").style.display = "none";
+    setModalCart(true);
   }
   function closeModalHandler() {
-    setOpenCart(false);
-    document.getElementById("hamburger").style.display = "";
+    setModalCart(false);
+    document.getElementById("modal").style.display = "";
   }
   return (
     <>
@@ -44,16 +45,17 @@ function MainNavigation() {
               </NavLink>
             </li>
           </div>
+          <img id="cart" src={cart} alt="cart icon" className={classes.cart} />
           <img
-            id="hamburger"
+            id="modal"
             src={hamburger}
-            alt="burger icon"
+            alt="modal icon"
             className={classes.humburger}
-            onClick={openCartsectionHandler}
+            onClick={openModalsectionHandler}
           />
         </ul>
       </nav>
-      {openCart && <Cart onClose={closeModalHandler} />}
+      {modalCart && <Modal onClose={closeModalHandler} />}
     </>
   );
 }

@@ -28,3 +28,9 @@
   margin-right: 12px;
   cursor: pointer;
 }
+.cart {
+  height: 2.5rem;
+  margin-top: 0.5%;
+  margin-left: 60rem;
+  cursor: pointer;
+}

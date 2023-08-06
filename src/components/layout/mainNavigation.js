@@ -4,6 +4,7 @@ import cart from "../../asserts/icons8-cart-80.png";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import Modal from "../sub-components/Modal";
+import CartSummary from "../sub-components/cartSummary";
 
 function MainNavigation() {
   const [modalCart, setModalCart] = useState(false);
@@ -46,6 +47,7 @@ function MainNavigation() {
             </li>
           </div>
           <img id="cart" src={cart} alt="cart icon" className={classes.cart} />
+          <CartSummary />
           <img
             id="modal"
             src={hamburger}

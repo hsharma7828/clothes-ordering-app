@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom";
 import StarRating from "../ui/startRating";
 import classes from "./productDescription.module.css";
+import { useContext } from "react";
+import CartContext from "../../store/cart-context";
+import { useRef } from "react";
 // import Cart from "./cart";
-// import { useState } from "react";
 
 function ProductDescription({ product }) {
   // const [openCart, setOpenCart] = useState(false);
+  const amount = useRef();
+  const cartCtx = useContext(CartContext);
   function addToCartHandler() {
-    // setOpenCart(true);
+    const enteredAmount = +amount.current.value;
+    product.amount = enteredAmount;
+    cartCtx.addItem(product);
   }
   return (
     <>
@@ -36,6 +42,7 @@ function ProductDescription({ product }) {
           >
             Add To Cart
           </button>
+          <input ref={amount} />
         </div>
       )}
     </>

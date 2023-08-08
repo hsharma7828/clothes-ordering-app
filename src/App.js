@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootPage from "./components/layout/root";
-import Clothes, { loader as productsLoader } from "./components/body/clothes";
+import { loader as productsLoader } from "../src/components/layout/home";
+import Clothes from "./components/body/clothes";
 import ErrorPage from "./components/layout/Errorpage";
 import ProductsDetails, {
   loader as productLoader,
@@ -11,13 +12,15 @@ const routes = createBrowserRouter([
   {
     path: "/",
     element: <RootPage />,
+    id: "home",
     errorElement: <ErrorPage />,
+    loader: productsLoader,
     children: [
       {
         path: "/products",
         element: <ProductsRoot />,
         children: [
-          { index: true, element: <Clothes />, loader: productsLoader },
+          { index: true, element: <Clothes /> },
           {
             path: ":productId",
             loader: productLoader,

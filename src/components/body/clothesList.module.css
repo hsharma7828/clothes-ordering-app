@@ -10,7 +10,6 @@
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: row; */
     gap: 1rem;
   }
 
@@ -58,7 +57,9 @@
     cursor: pointer;
   }
   .reset {
+    position: absolute;
     margin-left: 40px;
+    top: 7rem;
     cursor: pointer;
   }
   .filterList{

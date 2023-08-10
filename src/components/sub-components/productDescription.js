@@ -34,7 +34,7 @@ function ProductDescription({ product }) {
           />
           <p>Rating: {product.rating.rate}</p>
           <StarRating props={product.rating.rate} />
-          <p>Price: ₹ {product.price * 85}</p>
+          <p>Price: ₹ {(product.price * 85).toFixed(2)}</p>
           <button
             id={product.id}
             className={`${classes.buttonclass} ${classes.addToCart}`}

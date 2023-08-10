@@ -5,7 +5,7 @@ import Clothes from "./components/body/clothes";
 import ErrorPage from "./components/layout/Errorpage";
 import ProductsDetails, {
   loader as productLoader,
-} from "./components/body/productDetails";
+} from "./components/layout/productDetails";
 import ProductsRoot from "./components/layout/ProductsRoot";
 
 const routes = createBrowserRouter([

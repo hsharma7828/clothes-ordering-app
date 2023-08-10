@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Await, useRouteLoaderData } from "react-router-dom";
+// import Loader from "../ui/loader";
 import ClothesList from "./clothesList";
 
 function Clothes() {

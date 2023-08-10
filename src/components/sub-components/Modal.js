@@ -1,7 +1,6 @@
 import classes from "./Modal.module.css";
 import crossIcon from "../../asserts/icons8-x-50.png";
 function Modal(props) {
-  console.log(props);
   function closeModalHandler() {
     props.onClose();
   }

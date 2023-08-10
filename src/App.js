@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootPage from "./components/layout/root";
-import { loader as productsLoader } from "../src/components/layout/home";
+import Home, { loader as productsLoader } from "../src/components/layout/home";
 import Clothes from "./components/body/clothes";
 import ErrorPage from "./components/layout/Errorpage";
 import ProductsDetails, {
@@ -16,6 +16,7 @@ const routes = createBrowserRouter([
     errorElement: <ErrorPage />,
     loader: productsLoader,
     children: [
+      { path: "/home", element: <Home /> },
       {
         path: "/products",
         element: <ProductsRoot />,

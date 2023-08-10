@@ -27,7 +27,7 @@ function MainNavigation() {
                   isActive ? classes.active : classes.navLnk
                 }
                 end
-                to={"/"}
+                to={"/home"}
               >
                 Home
               </NavLink>

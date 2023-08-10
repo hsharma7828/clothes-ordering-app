@@ -1,4 +1,19 @@
-import { defer, json } from "react-router-dom";
+import { Suspense } from "react";
+import { Await, defer, json, useRouteLoaderData } from "react-router-dom";
+import TopRated from "../body/topRated";
+
+function Home() {
+  const { events } = useRouteLoaderData("home");
+  return (
+    <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
+      <Await resolve={events}>
+        {(loadedEvents) => <TopRated products={loadedEvents} />}
+      </Await>
+    </Suspense>
+  );
+}
+
+export default Home;
 
 async function loadEvents() {
   const response = await fetch("https://fakestoreapi.com/products");

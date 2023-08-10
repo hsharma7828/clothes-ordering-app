@@ -1,0 +1,34 @@
+.list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-right: 10px;
+  }
+
+  .item{
+    flex: 20%;
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .item a {
+    flex: 20%;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+  }
+  
+  .item a:hover {
+    transform: scale(1.02);
+  }
+
+  .item img {
+    width: 60%;
+    object-fit: cover;
+  }
+  h1{
+    text-align: center;
+  }

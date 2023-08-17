@@ -28,3 +28,6 @@
     text-decoration: none;
     color: black;
 }
+.buttonclass:disabled {
+    cursor: none;
+}

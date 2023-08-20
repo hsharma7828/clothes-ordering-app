@@ -10,10 +10,10 @@ function RootPage() {
 
   useEffect(() => {
     function checkAuthLoader(token, navigate) {
-      if (!token) {
+      if (!token?.token) {
         return;
       }
-      if (token === "EXPIRED") {
+      if (token?.token === "EXPIRED") {
         navigate("/products");
       }
       const tokenDuration = getTokenDuration();

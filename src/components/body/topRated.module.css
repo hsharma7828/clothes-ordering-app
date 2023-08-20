@@ -6,6 +6,10 @@
     margin-right: 10px;
   }
 
+  .list h2 {
+    text-align: center;
+  }
+
   .item{
     flex: 20%;
     height: fit-content;
@@ -26,8 +30,17 @@
   }
 
   .item img {
-    width: 60%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
+    justify-content: center;
+  }
+  
+  .content {
+    padding: 1rem;
+    width: 12rem;
+    height: 15rem;
+    margin: auto;
   }
   h1{
     text-align: center;

@@ -28,13 +28,16 @@ function ClothesList({ events }) {
   const dataList = (
     <ul className={classes.list}>
       {productList.map((event) => (
-        <li key={event.id} className={classes.item}>
-          <Link to={`/products/${event.id}`}>
-            <h2>{event.title}</h2>
-            <img src={event.image} alt={event.title} />
-            <div className={classes.content}></div>
-          </Link>
-        </li>
+        <div className={classes.outterbody}>
+          <li key={event.id} className={classes.item}>
+            <Link to={`/products/${event.id}`}>
+              <h2>{event.title}</h2>
+              <div className={classes.content}>
+                <img src={event.image} alt={event.title} />
+              </div>
+            </Link>
+          </li>
+        </div>
       ))}
     </ul>
   );

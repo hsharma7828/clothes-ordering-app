@@ -7,6 +7,8 @@ import ProductsDetails, {
   loader as productLoader,
 } from "./components/layout/productDetails";
 import ProductsRoot from "./components/layout/ProductsRoot";
+import AuthPage, { action as authAction } from "./utils/AuthPage";
+import { validateAuthLoader } from "./utils/Auth";
 
 const routes = createBrowserRouter([
   {
@@ -16,7 +18,7 @@ const routes = createBrowserRouter([
     errorElement: <ErrorPage />,
     loader: productsLoader,
     children: [
-      { path: "/home", element: <Home /> },
+      { path: "/home", element: <Home />, loader: validateAuthLoader },
       {
         path: "/products",
         element: <ProductsRoot />,
@@ -28,6 +30,11 @@ const routes = createBrowserRouter([
             element: <ProductsDetails />,
           },
         ],
+      },
+      {
+        path: "/auth",
+        element: <AuthPage />,
+        action: authAction,
       },
     ],
   },

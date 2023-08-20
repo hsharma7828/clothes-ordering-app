@@ -59,7 +59,9 @@ function Modal(props) {
         <p>Welcome to Cart Section</p>
         {modalItems}
         <hr className={classes.bottom_line}></hr>
-        <p className={classes.setTotalAmount}>Total Amount: ₹{totalAmount}</p>
+        <p className={classes.setTotalAmount}>
+          Total Amount: ₹{totalAmount.toFixed(2)}
+        </p>
       </div>
     </>
   );

@@ -1,6 +1,10 @@
 .badge {
     font-weight: bold;
     position: absolute;
-    right: 5rem;
     color: darkgray;
+  }
+
+  .badge_control {
+    right: 6.75rem;
+    position: absolute;
   }

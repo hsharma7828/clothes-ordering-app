@@ -10,7 +10,7 @@ function CartSummary() {
   }, 0);
 
   return (
-    <div>
+    <div className={classes.badge_control}>
       <span className={classes.badge}>{numberOfCartItem}</span>
     </div>
   );

@@ -5,6 +5,10 @@
   .events h1 {
     text-align: center;
   }
+  .outterbody{
+    max-width: 100%;
+    max-height: 100%;
+  }
   
   .list {
     list-style-type: none;
@@ -12,9 +16,12 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
+  .list h2 {
+    text-align: center;
+  }
 
   .item{
-    flex: 20%;
+    position: relative;
   }
   
   .item a {
@@ -30,12 +37,17 @@
   }
   
   .item img {
-    width: 60%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
+    justify-content: center;
   }
   
   .content {
     padding: 1rem;
+    width: 12rem;
+    height: 15rem;
+    margin: auto;
   }
   .item h2 {
     width: 20rem;

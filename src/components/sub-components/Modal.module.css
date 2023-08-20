@@ -1,5 +1,5 @@
 .cart_modal {
-    position: absolute;
+    position: fixed;
     background-color: #adffad;
     text-align: center;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
@@ -8,16 +8,18 @@
     top: 56px;
     width: 20%;
     right: 5px;
+    transition: 5s;
 }
 .cross_icon {
+    position: fixed;
     margin-right: 24rem;
     height: 30px;
     cursor: pointer;
-    position: absolute;
     right: -6.75rem;
     top: 3.5rem;
     background-color: #adffad;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 5s;
 }
 .list_control {
     float: left;

@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Await, defer, json, useRouteLoaderData } from "react-router-dom";
 import TopRated from "../body/topRated";
+import { getAuthToken } from "../../utils/Auth";
 
 function Home() {
   const { events } = useRouteLoaderData("home");
@@ -19,10 +20,6 @@ async function loadEvents() {
   const response = await fetch("https://fakestoreapi.com/products");
 
   if (!response.ok) {
-    // return { isError: true, message: "Could not fetch events." };
-    // throw new Response(JSON.stringify({ message: "Could not fetch events." }), {
-    //   status: 500,
-    // });
     return json({ message: "Could not fetch events." }, { status: 500 });
   } else {
     const resData = await response.json();
@@ -35,9 +32,13 @@ async function loadEvents() {
     return [resData, avaialbeCategories.sort()];
   }
 }
+export function tokenLoader() {
+  return getAuthToken();
+}
 
 export function loader() {
   return defer({
     events: loadEvents(),
+    token: tokenLoader(),
   });
 }

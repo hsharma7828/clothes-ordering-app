@@ -28,8 +28,9 @@ function TopRated({ products }) {
             <li key={event.id} className={classes.item}>
               <Link to={`/products/${event.id}`}>
                 <h2>{event.title}</h2>
-                <img src={event.image} alt={event.title} />
-                <div className={classes.content}></div>
+                <div className={classes.content}>
+                  <img src={event.image} alt={event.title} />
+                </div>
               </Link>
             </li>
           ))}

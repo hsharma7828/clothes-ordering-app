@@ -8,7 +8,7 @@ export function getTokenDuration() {
     const duration = expirationDate.getTime() - now.getTime();
     return duration;
   } else {
-    return redirect("auth");
+    return redirect("/auth");
   }
 }
 export function getAuthToken() {
@@ -29,7 +29,7 @@ export function getAuthToken() {
 export function validateAuthLoader() {
   const token = getAuthToken();
   if (!token) {
-    return redirect("auth");
+    return redirect("/auth");
   }
   return null;
 }

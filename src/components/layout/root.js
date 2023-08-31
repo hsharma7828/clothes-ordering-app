@@ -7,18 +7,21 @@ import { useEffect } from "react";
 function RootPage() {
   const token = useRouteLoaderData("home");
   const navigate = useNavigate();
+  const url = document.location.pathname;
 
   useEffect(() => {
     function checkAuthLoader(token, navigate) {
-      if (!token?.token) {
+      if (!token?.token || url === "/products") {
+        navigate("/products");
         return;
       }
-      if (token?.token === "EXPIRED") {
-        navigate("/products");
+      if (token?.token === "EXPIRED" || url === "/auth") {
+        navigate("/auth");
+      } else {
+        const tokenDuration = getTokenDuration();
+        console.log(tokenDuration);
+        navigate("/home");
       }
-      const tokenDuration = getTokenDuration();
-      console.log(tokenDuration);
-      navigate("/home");
     }
     checkAuthLoader(token, navigate);
   }, []);

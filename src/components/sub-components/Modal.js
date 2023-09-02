@@ -1,9 +1,19 @@
 import classes from "./Modal.module.css";
 import crossIcon from "../../asserts/icons8-x-50.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CartContext from "../../store/cart-context";
+import { useNavigate } from "react-router-dom";
 function Modal(props) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const clothCtx = useContext(CartContext);
+  useEffect(() => {
+    const isUserLoggedIn = localStorage.getItem("Login");
+
+    if (isUserLoggedIn) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+  const navigate = useNavigate();
   const { items } = clothCtx;
   const { totalAmount } = clothCtx;
   function closeModalHandler() {
@@ -21,6 +31,19 @@ function Modal(props) {
       newTitle = title.slice(0, 30) + "...";
     }
     return newTitle.trim();
+  }
+  function authHandler() {
+    if (localStorage.getItem("Login")) {
+      const message = window.confirm(
+        "You will be Logged Out? Do you wish continue..."
+      );
+      if (message) {
+        clothCtx.userLoggedOut();
+        navigate("/products");
+      }
+    } else {
+      navigate("/auth");
+    }
   }
   const modalItems = (
     <ul className={classes.list_control}>
@@ -47,6 +70,7 @@ function Modal(props) {
       ))}
     </ul>
   );
+  const btnText = isLoggedIn ? "Logout" : "Login";
   return (
     <>
       <img
@@ -57,6 +81,9 @@ function Modal(props) {
       />
       <div className={classes.cart_modal}>
         <p>Welcome to Cart Section</p>
+        <div className={classes.login_button}>
+          <button onClick={authHandler}>{btnText}</button>
+        </div>
         {modalItems}
         <hr className={classes.bottom_line}></hr>
         <p className={classes.setTotalAmount}>

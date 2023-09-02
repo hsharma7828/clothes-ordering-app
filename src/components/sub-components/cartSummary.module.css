@@ -5,6 +5,8 @@
   }
 
   .badge_control {
-    right: 6.75rem;
-    position: absolute;
+    right: 1.25rem;
+    float: right;
+    top: -3.5px;
+    position: relative;
   }

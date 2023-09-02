@@ -82,3 +82,14 @@
     margin-left: 1rem;
     margin-top: 8px;
   }
+
+  .login_button {
+    margin: 2px;
+    border: 1px solid #e69527;
+    border-radius: 5px;
+    height: 30px;
+    width: auto;
+    background-color: #e69527;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+    cursor: pointer;
+  }

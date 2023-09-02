@@ -57,6 +57,17 @@ const cartReducer = (state, action) => {
     return defaultCartState;
   }
 
+  if (action.type === "LOGOUT") {
+    localStorage.removeItem("Login");
+  }
+
+  if (action.type === "LOGOIN") {
+    localStorage.setItem(
+      "Login",
+      new Date(new Date().setHours(new Date().getHours() + 1))
+    );
+  }
+
   return defaultCartState;
 };
 
@@ -76,12 +87,16 @@ const CartProvider = (props) => {
   const clearCartHandler = () => {
     dispatchCartAction({ type: "CLEAR" });
   };
+  const userLogHandler = () => {
+    dispatchCartAction({ type: "LOGOUT" });
+  };
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
     clearCart: clearCartHandler,
+    userLoggedOut: userLogHandler,
   };
 
   return (

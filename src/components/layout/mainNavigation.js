@@ -59,8 +59,15 @@ function MainNavigation() {
               </NavLink>
             </li>
           </div>
-          <img id="cart" src={cart} alt="cart icon" className={classes.cart} />
-          <CartSummary />
+          <div className={classes.cartSummary}>
+            <img
+              id="cart"
+              src={cart}
+              alt="cart icon"
+              className={classes.cart}
+            />
+            <CartSummary />
+          </div>
           <img
             id="modal"
             src={hamburger}

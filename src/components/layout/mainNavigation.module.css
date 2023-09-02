@@ -35,3 +35,8 @@
   margin-left: 60rem;
   cursor: pointer;
 }
+.cartSummary {
+  float: right;
+  position: absolute;
+  right: 4rem;
+}
